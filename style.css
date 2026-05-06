@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent; 
+}
+
+.logo {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+}
+
+nav a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: white;
+    opacity: 0.3;
+}
+
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%), 
+                url("images/bg1.png") no-repeat center/cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 5%;
+    padding-bottom: 80px;
+}
+
+.overlay {
+    text-align: left;
+    max-width: 800px;
+}
+
+.overlay h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+section {
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.content-container, 
+.content-container-menu, 
+.content-container-tri {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+}
+
+.image-box, .text-box, .image-column, .text-column {
+    flex: 1;
+}
+
+.image-box img, .image-column img, .image-box-menu img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.text-box h2, .text-column h2 {
+    font-size: clamp(30px, 5vw, 45px);
+    margin-bottom: 20px;
+    font-family: "Great Vibes", cursive;
+    color: #d4a373;
+}
+
+.text-box p, .text-column p {
+    font-size: 17px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+
+.content-container-menu {
+    flex-direction: row-reverse;
+}
+
+
+footer {
+    background-color: #050505;
+    padding: 60px 5% 20px;
+    border-top: 1px solid #d4a373;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: #d4a373;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #d4a373;
+    opacity: 1;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+    .content-container, 
+    .content-container-menu, 
+    .content-container-tri {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-box img, .image-box-menu img {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .hero {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0;
+    }
+    
+    .overlay {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    nav a:not(:last-child)::after {
+        display: none;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+}
